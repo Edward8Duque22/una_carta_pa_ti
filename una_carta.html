@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carta de Dedicación</title>
+<style>
+  *{
+    font-family: 'Century Gothic', sans-serif;
+  }
+
+  /* Estilos previos... */
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+  }
+
+  body {
+    margin: 0; /* Elimina el margen predeterminado del cuerpo del documento */
+    padding: 0; /* Elimina el relleno predeterminado del cuerpo del documento */
+
+  }
+
+  .carta-container {
+    max-width: auto;
+    margin: 5px auto;
+    padding: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    filter: blur(-10px);
+  }
+
+  .carta-header {
+    background-color: #009688;
+    color: #ffffff;
+    padding: 5px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  .carta-body {
+    padding: 20px;
+    text-align: justify;
+    white-space: pre-line; /* Mantiene los saltos de línea y espacios */
+    /*font-family: 'Century Gothic', sans-serif;  Asegura que se use una fuente legible */
+    line-height: 1; /* Espaciado entre líneas */
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+  }
+
+  .carta-footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #009688;
+    color: #ffffff;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  div #asunto{
+    font-weight: 600;
+  }
+
+  #asunto, #carta-content{
+    margin-top: -1.8em;
+  }
+
+  th, td{
+    border: ;
+  }
+
+  .title{
+    padding: 20px 0;
+  }
+
+  .centrar{
+    padding: 0 280px;
+  }
+
+  .flotar{
+    padding: 0 30px;
+  }
+</style>
+</head>
+<body>
+  <div class="carta-container">
+    <div class="carta-header">
+      <center>
+        <table>
+          <tbody>
+            <tr>
+              <td class="title"><h1>Algo inexplicable</h1></td>
+              <td class="" title="Carta Virtual"><h3></h3></td>
+              <td class="flotar"><h5>Domingo 19 de mayo 2024, 23:51</h5></td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+    </div>
+    <div class="carta-body" id="carta-content">
+      <h3 id="asunto">
+        <!-- El contenido de la carta se llenará con JavaScript -->
+      </h3>
+      <!-- El contenido de la carta se llenará con JavaScript -->
+    </div>
+    <div class="carta-footer">
+      <p>© 2024 Edward. Todos los derechos reservados.</p>
+    </div>
+  </div>
+
+  <script>
+    const asunto = 'Asunto: Incomprensible';
+
+    const texto = 'Hola Valentina quiero decirte algo,\n \nEn mi vida llegué a pensar que me permitiera darme una oportunidad más después de lo que me sucedió con aquella relación que tuve, en donde aprendí bastante y aún más, a ser muy minucioso y meticuloso como ahora lo soy. Entendí muchas cosas de las que no me arrepiento y puedo analizar que no hace falta estar tanto tiempo solo o quizá en otros términos, independizar al corazón para empezar, y cuando hablo de empezar no lo relaciono con conocer de cero, porque eso es lo que ya he venido haciendo todo este tiempo, de lo que hablo es de entender, comprender, dar significado y ser muy constante en lo más mínimo, que es en lo que más cuesta estar hoy en día.\n \nExisten palabras que no digo, y no es por pena o porque no las quiera decir, sino que no son del momento.\n \nMe siento bien contigo, y te quiero aclarar muchas cosas, así como tú lo quieres hacer conmigo, y no busco hacerte entender sino que tú misma vayas haciéndolo, que analices quién soy, que no te quedes con lo que ves sino que cada día en los momentos o espacios que compartas conmigo, detalles mi comportamiento, la forma en como soy contigo y así con todo lo demás.\n \nNo soy de apariencias no soy de ser otro, me gusta ser auténtico, ser yo es lo que busco, quizá muchas veces tenga comportamientos que te lleguen a hacer pensar “Y bueno, ¿Qué con el?”, sin embargo, esa es mi esencia, ese soy yo, un tipo loco algo serio, un tanto enojón pero con el alma de un niño pequeño que no busca nada más y nada menos que ser el mismo sin importar qué.\n \nEres un tipo de mujer que tienes esas cualidades tan singulares, que no cualquier mujer tiene, tu las conoces, tu sabes quien eres, y ahí es donde me centro. Y quisiera decir que me complementas pero no sé si son el término exacto para decirlo debido a que es muy amplio el significado.\n \nQuisiera un día desnudarte el alma y verlo como es, qué es lo que esconde, hacerle sentir cosas que no todo hombre hace sentir a una mujer con el estilo de ser que tienes, anhelaría besarle, hacerle sentir y hacerle el amor con mis palabras y acciones, que veas lo que quieres y deseabas, y que estes completa.\n \nAún hay tiempo, aún podemos progresar, pero quisiera arriesgarme un poco más, y quizá lo haga, pero el miedo sigue. Y te lo expreso con la mano en el corazón y con todo aquello que te he demostrado con el acto más puro que tengo, la sinceridad.\n \nCon cariño,\n \nEdward';
+    let i = 0;
+    let j = 0;
+    const velocidad = 100; // Velocidad en milisegundos
+    const cartaContent = document.getElementById('carta-content');
+    const asuntoContent = document.getElementById('asunto');
+
+    function maquinaDeEscribir(content, text, index) {
+      if (index < text.length) {
+        content.innerHTML += text.charAt(index) === '\\n' ? '<br>' : text.charAt(index);
+        index++;
+        setTimeout(() => maquinaDeEscribir(content, text, index), velocidad);
+      }
+    }
+
+    // Iniciar la animación de la máquina de escribir
+    maquinaDeEscribir(asuntoContent, asunto, i);
+    setTimeout(() => maquinaDeEscribir(cartaContent, texto, j), asunto.length * velocidad);
+  </script>
+</body>
+</html>
